@@ -80,8 +80,8 @@
                         
                         // Create the Transport that call setUsername() and setPassword()
                         $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
-                        ->setUsername('mytestmail9000@gmail.com')
-                        ->setPassword('Testmymail1');
+                        ->setUsername('waterfordfcactivation@gmail.com')
+                        ->setPassword('Password1');
 
                         $mailer = Swift_Mailer::newInstance($transport);
                         // Create the message
@@ -89,7 +89,7 @@
                         // Give the message a subject
                         ->setSubject('Verify Your Email Address')
                         // Set the From address with an associative array
-                        ->setFrom(array('mytestmail9000@gmail.com' => 'Eddie Tutors'))
+                        ->setFrom(array('waterfordfcactivation@gmail.com' => 'Shawn Phelan'))
                         // Set the To addresses with an associative array
                         ->setTo(array($email))
                         // Give it a body
