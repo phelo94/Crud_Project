@@ -81,7 +81,7 @@
                         // Create the Transport that call setUsername() and setPassword()
                         $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
                         ->setUsername('waterfordfcactivation@gmail.com')
-                        ->setPassword('Password1');
+                        ->setPassword('Waterford1234');
 
                         $mailer = Swift_Mailer::newInstance($transport);
                         // Create the message
