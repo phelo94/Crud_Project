@@ -17,6 +17,8 @@
         $sql_query = mysqli_query($connection, "SELECT email FROM signup WHERE email = '{$email}' ");
         $count = mysqli_num_rows($sql_query);
         
+        
+        //salting the password in the database 
         $sql_salt = mysqli_query($connection, "SELECT randSaltPass FROM signup");
         $row = mysqli_fetch_array($sql_salt);
         $salt = $row['randSaltPass'];
@@ -65,8 +67,10 @@
                 if((preg_match("/^[a-zA-Z ]*$/", $f_name)) && (preg_match("/^[a-zA-Z ]*$/", $l_name)) &&
                    (filter_var($email, FILTER_VALIDATE_EMAIL)) && (preg_match('/^\S*(?=\S{7,15})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/', $pass_word))){
                     
+                    //activation key is encrypted with md5 and randomised 
                     $user_activation_key = md5(rand().time());
                     
+                    //is_active has to be 0 since its an enum
                     $sql = "INSERT INTO signup(email, firstname, lastname, password, activation_key, is_active, date_time) VALUES('{$email}', '{$f_name}', '{$l_name}', '{$password}', '{$user_activation_key}', '0', now()) ";
                     $query = mysqli_query($connection, $sql);
                     
@@ -76,7 +80,9 @@
                     
                     if($query){
                         
-                        $msg = "Please activate your account using this link <a href='http://localhost/crud/user/user_activation.php?key=".$user_activation_key."'>http://localhost/crud/user/user_activation.php?key=".$user_activation_key."</a>";
+                        $msg = "Please activate your account using this link: <a href='http://localhost:8080/crud/user/user_activation.php?key=".$user_activation_key."'>http://localhost:8080/crud/user/user_activation.php?key=".$user_activation_key."</a>
+                        </br>
+                        If the Link Does not work, copy and paste it.";
                         
                         // Create the Transport that call setUsername() and setPassword()
                         $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
@@ -89,7 +95,7 @@
                         // Give the message a subject
                         ->setSubject('Verify Your Email Address')
                         // Set the From address with an associative array
-                        ->setFrom(array('waterfordfcactivation@gmail.com' => 'Shawn Phelan'))
+                        ->setFrom(array('waterfordfcactivation@gmail.com' => 'Waterford FC'))
                         // Set the To addresses with an associative array
                         ->setTo(array($email))
                         // Give it a body
@@ -106,7 +112,7 @@
                         }else{
                             $info = "<div class='alert alert-info email_alert'>
                                 <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times</a>
-                                A Verification Email Has been Sent.</div>";
+                                Verification Email Has Been Sent.</div>";
                         }
                         
                     }

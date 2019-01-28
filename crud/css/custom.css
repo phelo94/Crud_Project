@@ -15,8 +15,10 @@ body{
 }
 
 .sub_msg{
+    
     text-align: center;
     padding: 10px 0px 20px 0px;
+    
 }
 
 .signup{
@@ -79,6 +81,12 @@ input[type="submit"]{
 
 .email_alert{
     margin: 0px 20px 20px 20px;
+}
+
+.h2{
+    color: cadetblue;
+    background-color: cadetblue;
+    font-size: 10px;   
 }
 
 
