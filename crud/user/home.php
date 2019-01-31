@@ -1,3 +1,4 @@
+<!-- Connect to the db -->
 <?php include("../config/db.php") ?>
 <?php include("../scripts/view_profile.php") ?>
 <?php include("../scripts/user_profile.php") ?>

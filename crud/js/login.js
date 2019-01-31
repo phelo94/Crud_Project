@@ -1,12 +1,13 @@
 $(document).ready(function(){
     $("#log_in").click(function(e){
         
+        //validation 
         var email = $("#email_login").val();
         var password = $("#password_login").val();
         
         var valid = true;
         
-        
+        //if email is empty is double = like; email==""
         if(email == "" || !isEmailVaild(email)){
             valid = false;
             $("#error_Email").html("<div class='alert alert-danger email_alert' style='margin-top:10px;'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times</a>Enter a Valid Email and Email Cannot Be Blank.</div>");
@@ -26,6 +27,8 @@ $(document).ready(function(){
                 email: email,
                 password: password
             };
+            
+            //ajax used to post data to login and to keep the database upto date
             
             $.ajax({
                 url: "../scripts/login.php",

@@ -23,6 +23,7 @@
         $row = mysqli_fetch_array($sql_salt);
         $salt = $row['randSaltPass'];
         
+        //salting the pass_word the user created
         $password = crypt($pass_word, $salt);
         
         if(!empty($firstname) && !empty($lastname) && !empty($email) && !empty($pass_word)){

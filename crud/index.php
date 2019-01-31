@@ -5,6 +5,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   
+   <!-- favicon -->
+<link rel="icon" href="images/favicon.ico" type="image/ico">
+
+   
     <meta charset="UTF-8">
     <title>Index Page</title>
     

@@ -18,9 +18,10 @@
         
         
         <!--This is the login form for the user-->
-        <!--The php script for the login functionality is in the login.php and is included at the top of the page-->
+       
         <form action="" method="post" class=".form-horizontal"> 
-            <!--The global variables that holds all alert messages are echoed here with php-->         
+    
+            <!-- The echo variables are global and can be called here-->        
             <?php echo $error1; ?>
             <?php echo $error2; ?>
             <?php echo $error3; ?>
@@ -32,7 +33,9 @@
                <label for="" class="col-sm-2">Email:</label>
                <div class="col-sm-10">
                   <input type="text" name="email_login" id="email_login" class="form-control"> 
-                  <span id="error_Email"></span> <!--This span tag with id is used to display the client-side error from the custom validation. Same with the others-->
+                  <span id="error_Email"></span> 
+                  
+                  <!-- This brings up an error that has to be made in the login.js to warn the user the email address isnt correct-->
                </div>
            </div>
            
@@ -54,9 +57,18 @@
         
         <div class="row">
             <div class="col-sm-12 text-center">
-                <a href="./user/forgot_password.php">Forgot Password?</a>
+                <a href="./user/forgot_password.php">Reset Password</a>
             </div>
         </div>
+        
+        <!--down
+        <div class="row form-group" style="margin: 0px 10px 20px 10px;">
+               <div class="col-xs-12">
+                  <input type="submit" name="Reset" id="reset" class="form-control" value="Reset Password"> 
+               </div>
+           </div>
+           
+           --up-->
         
     </div>
     
