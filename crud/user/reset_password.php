@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>RESET PASSOWRD</title>
+    <title>Reset Password</title>
     
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -52,6 +52,7 @@
        <?php echo $fail_update; ?>
        <?php echo $empty_update; ?>
        <?php echo $confirm_error; ?>
+       <!--echo $confirmation_error;-->
         
         
         <!--This is the form that allows the user to update their password-->
@@ -75,17 +76,44 @@
            
            <div class="row form-group" style="margin: 0px 10px 20px 10px;">
                <div class="col-xs-12">
-                  <input type="submit" name="reset" id="reset" class="form-control" value="RESET PASSWORD"> 
+                  <input type="submit" name="reset" id="reset" class="form-control" value="Reset Password"> 
+               </div>
+           </div>
+           <!-- return to login.php  
+           <div class="row form-group" style="margin: 0px 10px 20px 10px;">
+               <div class="col-xs-12">
+                  <input type="submit" name="reset" id="reset" class="form-control" value="Reset Password"> 
                </div>
            </div>
            
-           <!--
+           
+           
            <div class=" form-group" style="margin:;">
                <div class="col-xs-12">
-                  <input type="submit" name="reset" id="reset_password" class="form-control" value="RESET PASSWORD"> 
+                  <input type="submit" name="index" id="index" class="form-control" value="Return to Home"> 
                </div>
            </div>
-           -->
+           
+            
+           
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> 
+      </button>
+      <a class="navbar-brand crud" href="../index.php">Waterford FC</a>
+         -->
+         
+         <div class="row">
+            <div class="col-sm-12 text-center">
+                <a href="/index.php#login">Return to Home</a>
+            </div>
+        </div>
+         
+         
+         <div class="row">
+            <div class="col-sm-12 text-center">
+                <a href="index.php">Reset Password</a>
+            </div>
+        </div>
+          
             
         </form>
         

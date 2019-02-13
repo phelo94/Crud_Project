@@ -58,10 +58,10 @@
                                 Only Letters are Allowed For Lastname</div>";
                 }
                 
-                if(!preg_match('/^\S*(?=\S{7,15})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/', $pass_word)){
+                if(!preg_match('/^\S*(?=\S{5,15})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/', $pass_word)){
                     $error5 = "<div class='alert alert-danger email_alert'>;
                                 <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times</a>
-                                Password Must Be Between 7 and 15 Characters and Must Contain At Least One Lowercase Letter One Uppercase Letter and One Digit.</div>";
+                                Password Must Be Between 5 and 15 Characters and Must Contain At Least One Lowercase Letter One Uppercase Letter and One Digit.</div>";
                 }
                 
                 //preg match validation 
@@ -89,7 +89,7 @@
                         $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
                         ->setUsername('waterfordfcactivation@gmail.com')
                         ->setPassword('Waterford1234');
-
+ 
                         $mailer = Swift_Mailer::newInstance($transport);
                         // Create the message
                         $message = Swift_Message::newInstance('Test')

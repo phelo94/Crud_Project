@@ -4,12 +4,14 @@
 <!--This is the page where the user enters his email address so as to receive a password reset email-->
 <!--The user uses this page only if they want to reset their password-->
 
+<!--simular to index with headers and links -->
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>FORGOT PASSOWRD RECOVERY</title>
+    <title>Forgot Password</title>
     
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -64,6 +66,7 @@
                </div>
            </div>
            
+           <!--server side validation,,, add user side validation-->
            <div class="row form-group" style="margin: 0px 10px 20px 10px;">
                <div class="col-xs-12">
                   <input type="submit" name="forgot" id="submit" class="form-control" value="SUBMIT"> 

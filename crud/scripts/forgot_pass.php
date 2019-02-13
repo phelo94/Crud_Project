@@ -5,35 +5,37 @@
 <?php
 
     global $connection;
+//call all scripting variables globally
     global $error, $fail, $info;
-
+//forgot is the reset button called
     if(isset($_POST['forgot'])){
         $email = $_POST['email'];
         
         $email = mysqli_real_escape_string($connection, $email);
-        
+        //retrieving the activated email in the DB 
         $query_sql = "SELECT * FROM signup WHERE email = '{$email}' ";
         $query = mysqli_query($connection, $query_sql);
         $user_row = mysqli_num_rows($query);
-        
+        //if email is not empty ,,if the row in the DB is empty, then return email doesnt excists ,, so do <== 0)
         if(!empty($email)){
             if($user_row <= 0){
                 $error = "<div class='alert alert-danger email_alert'>
                             <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times</a>
                             Email Does Not Exist</div>";
+                //making sure email and the email address is activated,,, pass the activation so it matches the key in The DB so they can update their password 
             }else{
                 while($row = mysqli_fetch_array($query)){
                     $user_email = $row['email'];
                     $user_key = $row['activation_key'];
                 }
                 
-                $msg = "Please follow this link to reset your password <a href='http://localhost/crud/user/reset_password.php?key=".$user_key."'>http://localhost/crud/user/reset_password.php?key=".$user_key."</a>";
+                $msg = "Please follow this link to reset your password <a href='http://localhost:8080/crud/user/reset_password.php?key=".$user_key."'>http://localhost:8080/crud/user/reset_password.php?key=".$user_key."</a>";
                 
-                //Create the Transport that call setUsername() and setPassword()
+                //Same swift processs as done in the insert.php during the sign up phase 
                 $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
                     //check if i can hide these details 
-                ->setUsername('mytestmail9000@gmail.com')
-                ->setPassword('Testmymail1');
+                ->setUsername('waterfordfcactivation@gmail.com')
+                ->setPassword('Waterford1234');
 
                 $mailer = Swift_Mailer::newInstance($transport);
                 // Create the message
@@ -41,7 +43,7 @@
                 // Give the message a subject
                 ->setSubject('Reset Your Password')
                 // Set the From address with an associative array
-                ->setFrom(array('mytestmail9000@gmail.com' => 'Eddie Tutors'))
+                ->setFrom(array('waterfordfcactivation@gmail.com' => 'Waterford FC Activation'))
                 // Set the To addresses with an associative array
                 ->setTo(array($email))
                 // Give it a body
