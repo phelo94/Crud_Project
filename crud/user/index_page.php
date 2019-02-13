@@ -2,7 +2,7 @@
 <div class="container">
    <br>
     <div class="row" style="text-align:center;">
-        <h3> INDEX PAGE</h3>
+        <h3> Index Page</h3>
     </div>
     
     <div id="typed_text" class="row sub_msg">

@@ -58,7 +58,7 @@
 
 <div class="container">
     <br>
-    <h1 class="text-center">FILL IN YOUR DETAILS TO COMPLETE YOUR PROFILE</h1>
+    <h1 class="text-center">Fill in your details to finish your profile</h1>
     <br>
     
     <div class="row" style="border: 1px solid #e7e7e7;">

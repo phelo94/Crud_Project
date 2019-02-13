@@ -42,6 +42,13 @@
             <li><a href="../users/edit.php?firstname=<?php echo $_SESSION['firstname']; ?>">Edit Profile</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="../user/logout.php">Logout</a></li>
+            <!--       
+            
+            <li><a href="../users/edit.php?firstname= php echo $_SESSION['email']; ?>"></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="../user/logout.php">Logout</a></li>
+            
+            -->
           </ul>
         </li>
       </ul>

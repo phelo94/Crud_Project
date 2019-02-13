@@ -40,7 +40,7 @@
 
 <div class="container">
     <div class="row" style="text-align:center;">
-        <h3>FORGOT PASSWORD?</h3>
+        <h3>Forgot Password?</h3>
     </div>
     
     <div class="row sub_msg">

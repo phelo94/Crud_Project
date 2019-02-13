@@ -35,7 +35,7 @@
                <label for="" class="col-sm-2">Email:</label>
                <div class="col-sm-10">
                   <input type="text" name="email" id="email" class="form-control"> 
-                  <span id="errorEmail"></span> <!--This span tag with id is used to display the client-side error from the custom validation. Same with the others-->
+                  <span id="errorEmail"></span> <!--This span tag with id is used to display the client-side error from the custom validation. Same with the others,, if error use errorEmail or erroremail-->
                </div>
            </div>
            

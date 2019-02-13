@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <title>INDEX PAGE</title>
     
-    <!-- Latest compiled and minified CSS -->
+    <!-- simular to last page -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
@@ -25,21 +25,14 @@
 </head>
 
 <script>
-//First we get the document objct model ready
+
 $(document).ready(function(){
-    //We get the id of search button and add a click event listener to the button
-    //So when the button is clicked, the function will be executed
+    
     $("#search").click(function(){
-        //We get the value of the search input field by getting the id and using the val method to get the value. We then store the result in a variable called search.
+        
         var search = $("#search_input").val();
         
-        //This ajax method is used to send the data from the input field to the search.php to be processed
-        //Url is the request that is sent to the search.php
-        //type is the type of request sent and in this case it is a POST request
-        //data is the data sent through the request and it is sent as a javascript object
-        //the first search is the key that is sent and the second search is the same search variable that holds the input value.
-        //success is the callback function that is executed after the request has been sent
-        //but in this case we are not doing anything with it.
+        
         $.ajax({
             url: '../scripts/search.php',
             type: 'POST',
@@ -78,9 +71,7 @@ $(document).ready(function(){
         <li class="dropdown">
 <?php
 
-//This count variable is from the view_profile.php included at the top of the page
-//If the user does not have data in the profile table, the user should see all these links including the link for complete profile. That is if count <= 0
-//But if count > 0, that is if the user has updated his profile then the user should see the links in the else statement
+
 if($count <= 0){
 
 $profile_links = <<<DELIMETER
@@ -126,7 +117,24 @@ echo $profile_links2;
         
         <div class="col-md-3">
             <?php
-            //Similarly if the user has not data in the profile table, the user should see only the first name, last name, an icon for image and a button to take the user to the complete profile page
+            
+            /*
+            
+            
+            if($count <= 0){
+                    echo "<div class='col-sm-10 col-md-10 col-lg-10'>
+                                < style='border:none'>
+                                    <h3 style='font-weight:bold;'>$user_firstname $user_lastname</h3>
+
+                                    <a href='../users/profile.php?id=$user_id&&$firstname&&$lastname&&email'>
+                                        <span class='fa fa-user fa-5x' style='font-size:10em;' aria-hidden='true'></span>
+                                    </a>
+                                </center><br>
+                                <a href='../profile.php' class=' btn-primary'>Complete Your Profile</a>
+                            </div>"
+            
+            */
+            
                 if($count <= 0){
                     echo "<div class='col-sm-10 col-md-10 col-lg-10'>
                                 <center class='thumbnail' style='border:none'>
@@ -190,7 +198,7 @@ echo $profile_links2;
                 </div><br><br>
                 
                 <div class="row">
-<!--                  The search result is displayed here because of this search.php file included here-->
+<!--                  The search result is displayed here because of this search.php file included here,, add the search script -->
                    <?php include("../scripts/search.php"); ?>
                 </div>
             

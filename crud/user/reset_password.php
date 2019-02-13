@@ -38,7 +38,7 @@
 
 <div class="container">
     <div class="row" style="text-align:center;">
-        <h3>RESET PASSWORD</h3>
+        <h3>Reset Password</h3>
     </div>
     
     <div class="row sub_msg">
@@ -55,7 +55,7 @@
         
         
         <!--This is the form that allows the user to update their password-->
-<!--        The php script responsible for this is included at the top of the page which is reset_pass.php-->
+<!--        The php script is reset_pass.php, make sure i add it -->
         <form action="" method="post" class=".form-horizontal"> 
             
            <div class="row form-group input_group">
@@ -78,6 +78,14 @@
                   <input type="submit" name="reset" id="reset" class="form-control" value="RESET PASSWORD"> 
                </div>
            </div>
+           
+           <!--
+           <div class=" form-group" style="margin:;">
+               <div class="col-xs-12">
+                  <input type="submit" name="reset" id="reset_password" class="form-control" value="RESET PASSWORD"> 
+               </div>
+           </div>
+           -->
             
         </form>
         

@@ -112,9 +112,17 @@
                </div><br>
                
                <div class=" form-group">
-                   <label for="" class="control-label">Short Quote</label>
+                   <label for="" class="control-label">General Description</label>
                    <textarea name="quote" class="form-control" id="" cols="30" rows="10"><?php echo $user_quote; ?></textarea>
                </div><br>
+               
+               <!--
+               <div class=" form-group">
+                   <label for="" class="control-label">General Description</label>
+                   <textarea name="posistion" class="form-control" id="" cols="30" rows="10"><</textarea>
+               </div><br>
+               
+               -->
                
                <div class=" form-group">
                    <label for="" class="control-label">About Me</label>

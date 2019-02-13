@@ -36,11 +36,41 @@ $users = <<<DELIMETER
                 </center>
             </div>
             
+            
+            
         </div>
     </div>
 
 
 DELIMETER;
+        
+        
+           /*$users = <<<DELIMETER
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="thumbnail">
+        
+            <a href="../users/user.php?id=$user_id&&$firstname&&$lastname">
+                <img class="img-responsive" src="../images/$img">
+            </a>
+            
+            <div class="caption">
+                <center>
+                    <a href="../users/user.php?id=$user_id&&$firstname&&$lastname&&email">
+                        <h4>{$email} {$firstname} {$lastname}</h4>
+                    </a>
+                </center>
+            </div>
+            
+            
+            
+        </div>
+    </div>
+
+
+DELIMETER;
+*/
+        
+        
 echo $users;
     }
 }
@@ -71,19 +101,12 @@ echo $users;
 <script>
 //First we get the document objct model ready
 $(document).ready(function(){
-    //We get the id of search button and add a click event listener to the button
-    //So when the button is clicked, the function will be executed
+    
     $("#search").click(function(){
-        //We get the value of the search input field by getting the id and using the val method to get the value. We then store the result in a variable called search.
+        
         var search = $("#search_input").val();
         
-        //This ajax method is used to send the data from the input field to the search.php to be processed
-        //Url is the request that is sent to the search.php
-        //type is the type of request sent and in this case it is a POST request
-        //data is the data sent through the request and it is sent as a javascript object
-        //the first search is the key that is sent and the second search is the same search variable that holds the input value.
-        //success is the callback function that is executed after the request has been sent
-        //but in this case we are not doing anything with it.
+        
         $.ajax({
             url: '../scripts/search.php',
             type: 'POST',
@@ -121,9 +144,7 @@ $(document).ready(function(){
         
         <li class="dropdown">
 <?php
-//This count variable is from the view_profile.php included at the top of the page
-//If the user does not have data in the profile table, the user should see all these links including the link for complete profile. That is if count <= 0
-//But if count > 0, that is if the user has updated his profile then the user should see the links in the else statement
+
             
 if($count <= 0){
 
