@@ -1,6 +1,5 @@
 <?php include("./scripts/login.php"); ?> 
 
-<!--This form is displayed inside the login tab in the index.php page-->
 
 <div class="container">
     <div class="row" style="text-align:center;">

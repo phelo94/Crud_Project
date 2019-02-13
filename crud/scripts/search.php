@@ -30,7 +30,8 @@ while($row = mysqli_fetch_array($send_query)){
         $gender = $row['gender'];
         $intro = $row['intro'];
         $img = $row['image'];
-        
+    
+        //delimiter  not returning full results 
 $search_result = <<<DELIMETER
     <div class="col-sm-4 col-md-4 col-lg-4" style="">
         <div class="thumbnail">

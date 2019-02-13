@@ -12,17 +12,14 @@
         $key = "";
     }
     
-    //If the key in the browser is not empty i can then select the activation_key from the database
-    // It selects all the data from the databse where the activation_key is the same key from the signup
+    
     if($key != ''){
         
-        //mysqli_num_rows() is used to count the number of rows that meet that sql select statement to find what rows have the activation_key
+        
         $sql = mysqli_query($connection, "SELECT * FROM signup WHERE activation_key = '$key' ");
         $count = mysqli_num_rows($sql);
         
-        /*in the while loop a check is done and if the returned value is equal to 1 in the databse,
-        then we loop through the table using the mysqli_fetch_array() to get the value we need and in this case its the is_active value of the user in the databse
-        */
+       
         if($count == 1){
             while($row = mysqli_fetch_array($sql)){
                 $is_active = $row['is_active'];

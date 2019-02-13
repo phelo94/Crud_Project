@@ -2,7 +2,6 @@
 
 
 <?php
-//This is the logic that allows the user to update his data in the database
 
     global $connection;
     global $user_email, $user_firstname, $user_lastname, $user_gender, $user_intro, $user_img, $user_quote;

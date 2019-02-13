@@ -68,6 +68,12 @@
        <div id="admin" class="tab-pane fade">
            <?php include("admin/admin_login.php"); ?>
        </div>
+       
+       <!--
+        <div id="admin" class="tab-pane fade">
+           include("admin/adminlogin.php"); ?>
+       </div>
+       -->
         
     </div>
         

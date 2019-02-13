@@ -28,6 +28,7 @@
             $sql = mysqli_query($connection, "SELECT * FROM signup WHERE activation_key = '$key' ");
             $count = mysqli_num_rows($sql);
             
+            //pass_word not password
             if(!empty($pass_word)){
                 if($count == 1){
                     

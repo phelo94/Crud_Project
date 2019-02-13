@@ -31,6 +31,7 @@
                 
                 //Create the Transport that call setUsername() and setPassword()
                 $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
+                    //check if i can hide these details 
                 ->setUsername('mytestmail9000@gmail.com')
                 ->setPassword('Testmymail1');
 

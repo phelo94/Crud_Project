@@ -19,7 +19,7 @@
         $quote = $row['quote'];
         $user_image = $row['image'];
     }
-
+//image not saving in the database 
     function profile_image(){
         global $count, $user_image;
         

@@ -18,7 +18,7 @@
         $quote = $row['quote'];
         $user_image = $row['image'];
     }
-
+//same issue in view_user where results arent shown, when fixed its the same scripting language that can be copied 
     function profile_image(){
         global $count, $user_image;
         

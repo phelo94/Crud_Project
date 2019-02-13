@@ -38,7 +38,7 @@
             $send = mysqli_query($connection, $query_send);
             
             if(!$send){
-                die("DATA WAS NOT INSERTED INTO DATABASE " . mysqli_error($connection));
+                die("The Data wasnt inserted into the database " . mysqli_error($connection));
             }
             header("Location: ../users/profile.php");
             
