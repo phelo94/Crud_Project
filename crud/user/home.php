@@ -8,7 +8,7 @@
 function allUsers(){
     global $connection;
     
-    //This query is sent to the mysql database to retrieve data
+    //get the  query to send  the mysql database to retrieve data
     $select_query = mysqli_query($connection, "SELECT * FROM profile WHERE user_id != {$_SESSION['id']}");
     
     while($row = mysqli_fetch_array($select_query)){
@@ -20,6 +20,10 @@ function allUsers(){
         $intro = $row['intro'];
         $img = $row['image'];
         
+        //spaces dont work with delimeter
+        //for small medinum screens col-sm-4 col-md-4 col-lg-4">
+        //cant comment in delimeter
+    
 $users = <<<DELIMETER
     <div class="col-sm-4 col-md-4 col-lg-4">
         <div class="thumbnail">
@@ -143,7 +147,11 @@ $(document).ready(function(){
       <ul class="nav navbar-nav navbar-right">
         
         <li class="dropdown">
-        <!--  SESSION in nav bar to navigate to the users profile under their name, sinces its uniwue in the db ,, so i call th eid since it should be svaed in the SESSION -->
+        <!--  SESSION in nav bar to navigate to the users profile under their name, sinces its uniwue in the db ,, so i call th eid since it should be svaed in the SESSION 
+        
+        If user hasnt completed prfile ,make <=0 else their details are filled in and then have complete profile 
+        -->
+    
 <?php
 
             
@@ -193,6 +201,7 @@ echo $profile_links2;
         <div class="col-md-3">
             <?php
             //Similarly if the user has not data in the profile table, the user should see only the first name, last name, an icon for image and a button to take the user to the complete profile page
+            //get id not user_id else it wont return the data 
                 if($count <= 0){
                     echo "<div class='col-sm-10 col-md-10 col-lg-10'>
                                 <center>
@@ -251,7 +260,7 @@ echo $profile_links2;
                 
                 -->
                 
-                <h3 class="text-center">All Users</h3>
+                <h3 class="text-left">Other Players</h3>
                 <div class="row" style="margin-bottom: 150px">
 <!--                   This is where the function is called-->
                     <?php allUsers(); ?>

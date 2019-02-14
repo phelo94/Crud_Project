@@ -20,6 +20,8 @@
 
 </head>
 
+
+
 <body>
 <nav class="navbar" style="background-color:#19aff5 ; margin-bottom: 0; border-radius:0;">
   <div class="container">
@@ -50,6 +52,8 @@
     
   </div>
 </nav>
+
+
 
 <div class="jumbotron jumbo" style="background-color:#74b5f7;">
     <h2 class="text-center" style="font-size:6 0px; font-weight: 600;">Welcome <?php echo $_SESSION['firstname']; ?></h2>
