@@ -82,7 +82,7 @@ echo $users;
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>INDEX PAGE</title>
+    <title>Index Page</title>
     
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -143,6 +143,7 @@ $(document).ready(function(){
       <ul class="nav navbar-nav navbar-right">
         
         <li class="dropdown">
+        <!--  SESSION in nav bar to navigate to the users profile under their name, sinces its uniwue in the db ,, so i call th eid since it should be svaed in the SESSION -->
 <?php
 
             
@@ -220,7 +221,7 @@ echo $profile_links2;
         </div>
         
         <div class="col-md-9">
-<!--            Boottrap corousel to display sliders-->
+<!--            Bootstrap corousel to display sliders
             <div class="row carousel-holder">
 
                     <div class="col-md-12">
@@ -233,12 +234,6 @@ echo $profile_links2;
 
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image" src="../images/slider1.jpeg" alt="">
-                                </div>
-                                <div class="item">
-                                    <img class="slide-image" src="../images/slider1.jpeg" alt="">
-                                </div>
-                                <div class="item">
                                     <img class="slide-image" src="../images/slider1.jpeg" alt="">
                                 </div>
                             </div>
@@ -254,6 +249,8 @@ echo $profile_links2;
 
                 </div><br>
                 
+                -->
+                
                 <h3 class="text-center">All Users</h3>
                 <div class="row" style="margin-bottom: 150px">
 <!--                   This is where the function is called-->
@@ -266,8 +263,10 @@ echo $profile_links2;
     </div>
     
 </div>   
-
-
+<br>
+<br>
+<br>
+<br>
 <?php include("footer.php"); ?>
 </body>
 </html>

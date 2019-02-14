@@ -9,6 +9,8 @@
     $query = mysqli_query($connection, $query_select);
     $count = mysqli_num_rows($query);
 
+//else statement to fetch the db data 
+//make them global, thats why there is an error on line 14 and add <?php include("../config/db.php");
     while($row = mysqli_fetch_array($query)){
         $user_id = $row['user_id'];
         $firstname = $row['firstname'];
@@ -23,6 +25,7 @@
     function profile_image(){
         global $count, $user_image;
         
+        //if the data is still the palceholder then the update should fail,, else then find the source image and add the image 
         if($count <= 0){
             echo "<img src='http://placehold.it/250x250' style='margin-left: 40px;>";
         }else{
@@ -41,23 +44,23 @@
         
         if($count <= 0){
             echo "<div class='alert alert-info email_alert text-center' style='margin: 0px 10px 20px 0px;'>
-                FIRSTNAME HAS NOT BEEN UPDATED
+                First Name Hasnt Been Updated
                 </div>";
             
             echo "<div class='alert alert-info email_alert text-center' style='margin: 0px 10px 20px 0px;'>
-                LASTNAME HAS NOT BEEN UPDATED
+                Last Name Has Not Been Updated
                 </div>";
             
             echo "<div class='alert alert-info email_alert text-center' style='margin: 0px 10px 20px 0px;'>
-                EMAIL HAS NOT BEEN UPDATED
+                Email Has Not Been Updated
                 </div>";
             
             echo "<div class='alert alert-info email_alert text-center' style='margin: 0px 10px 20px 0px;'>
-                GENDER HAS NOT BEEN UPDATED
+                Gender Has Not Been Updated
                 </div>";
             
             echo "<div class='alert alert-info email_alert text-center' style='margin: 0px 10px 20px 0px;'>
-                DESCRIPTION HAS NOT BEEN UPDATED
+                Description Has Not Been Updated
                 </div>";
         }else{
             echo "<label class='control-label col-sm-3'>Firstname:</label>

@@ -2,13 +2,15 @@
 
 
 <?php
-
+//always declare as global 
     global $connection;
     global $user_email, $user_firstname, $user_lastname, $user_gender, $user_intro, $user_img, $user_quote;
     global $error, $count;
 
     $query_select = "SELECT * FROM profile WHERE user_id = {$_SESSION['id']} ";
     $send_query = mysqli_query($connection, $query_select);
+
+// look through the rows to check  
     $count = mysqli_num_rows($send_query);
 
     if(!$send_query){
@@ -16,6 +18,9 @@
     }
 
     while($row = mysqli_fetch_array($send_query)){
+        
+        //copy and paste from view_profile to save time 
+        
         $user_id = $row['user_id'];
         $user_email = $row['email'];
         $user_firstname = $row['firstname'];
@@ -44,6 +49,7 @@
         if(empty($user_img)){
             $query = mysqli_query($connection, "SELECT * FROM profile WHERE user_id = {$_SESSION['id']}");
             
+            //fetch the data and look through the db ($query))
             while($row = mysqli_fetch_array($query)){
                 $user_img = $row['image'];
             }
@@ -51,7 +57,7 @@
         
         if($count <= 0){
             $error = "<div class='alert alert-danger email_alert text-center'>
-            <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times</a>Please complete your profile before your can update.</div>"; 
+            <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times</a>Please complete your profile before you can update.</div>"; 
         }else{
             $update = "UPDATE profile SET ";
             $update .= "firstname = '{$user_firstname}', ";
@@ -62,12 +68,13 @@
             $update .= "intro = '{$user_intro}', ";
             $update .= "image = '{$user_img}', ";
             $update .= "date_time = now() ";
+            //only work when using the session 
             $update .= "WHERE user_id = {$_SESSION['id']}";
             
             $update_query = mysqli_query($connection, $update);
             
             if(!$update_query){
-                die("UPDATE WAS NOT SUCCESSFUL " . mysqli_error($connection));
+                die("Update Wasnt Successful " . mysqli_error($connection));
             }
             
             header("Location: ../users/profile.php?fisrtname={$user_firstname}");

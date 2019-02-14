@@ -99,18 +99,19 @@
            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> 
       </button>
       <a class="navbar-brand crud" href="../index.php">Waterford FC</a>
-         -->
+         
          
          <div class="row">
             <div class="col-sm-12 text-center">
                 <a href="/index.php#login">Return to Home</a>
             </div>
         </div>
+        -->
          
          
          <div class="row">
             <div class="col-sm-12 text-center">
-                <a href="index.php">Reset Password</a>
+                <a href="../index.php#login">Return to Home Page</a>
             </div>
         </div>
           

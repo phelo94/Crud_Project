@@ -1,5 +1,6 @@
 <?php include("../config/db.php") ?>
 <?php include("../scripts/user_profile.php") ?>
+<!--include("../scripts/edit.php")-->
 
 
 <!DOCTYPE html>
@@ -21,7 +22,7 @@
 </head>
 
 <body>
-<nav class="navbar" style="background-color: ; margin-bottom: 0; border-radius:0;">
+<nav class="navbar" style="background-color:#19aff5; margin-bottom: 0; border-radius:0;">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -29,7 +30,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
       </button>
-      <a class="navbar-brand crud" style="color: black !important;" href="../user/home.php">Waterford FC</a>
+      <a class="navbar-brand crud" style="color: white !important;" href="../user/home.php">Waterford FC</a>
     </div>
     
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,7 +38,7 @@
       <ul class="nav navbar-nav navbar-right">
         
         <li class="dropdown">
-          <a href="#" style="color: black ; background-color:white;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['firstname']; ?> <span class="caret"></span></a>
+          <a href="#" style="color: white ; background-color:#19aff5;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['firstname']; ?> <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="../users/profile.php?firstname=<?php echo $_SESSION['firstname']; ?>">View Profile</a></li>
             <li><a href="../users/edit.php?firstname=<?php echo $_SESSION['firstname']; ?>">Edit Profile</a></li>
@@ -51,8 +52,8 @@
   </div>
 </nav>
 
-<div class="jumbotron jumbo">
-    <h2 class="text-center" style="font-size:70px; font-weight: 600;">Welcome <?php echo $_SESSION['firstname']; ?></h2>
+<div class="jumbotron jumbo" style="background-color:#74b5f7;">
+    <h2 class="text-center" style="font-size:60px; font-weight: 400;">Welcome <?php echo $_SESSION['firstname']; ?></h2>
     <h4 class="text-center" style="font-size: 30px;">(Complete Your profile)</h4>
 </div>
 
@@ -61,11 +62,13 @@
     <h1 class="text-center">Fill in your details to finish your profile</h1>
     <br>
     
-    <div class="row" style="border: 1px solid #e7e7e7;">
+    <div class="row" style="border: 5px solid #e7e7e7;">
        <div class="col-sm-12">
           
           <?php echo $msg; ?>
           
+          <br>
+          <!-- post the form to db-->
            <form action="" method="post" enctype="multipart/form-data">
                <div class="form-group">
                    <label for="" class="control-label">Profile Image</label>
@@ -97,22 +100,28 @@
                            <option value="">Select Gender</option>
                            <option value="Male">Male</option>
                            <option value="Female">Female</option>
+                           <option value="Other">Other</option>
                        </select>
                    </div>
                </div><br>
                
+               
                <div class=" form-group">
-                   <label for="" class="control-label">Short Quote</label>
+                   <label for="" class="control-label">About me</label>
                    <textarea name="quote" class="form-control" id="" cols="30" rows="10"></textarea>
                </div><br>
+               
+               
                
                <div class=" form-group">
                    <label for="" class="control-label">About Me</label>
                    <textarea name="intro" class="form-control" id="" cols="30" rows="10"></textarea>
                </div><br>
                
+               
+               
                <div class="form-group">
-                   <input type="submit" name="submit" class="form-control btn btn-primary" value="SUBMIT">
+                   <input type="submit" name="submit" class="form-control btn btn-primary" value="Submit">
                </div>
                
            </form>

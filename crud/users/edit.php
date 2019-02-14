@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>EDIT PROFILE</title>
+    <title>Edit Profile</title>
     
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -21,7 +21,7 @@
 </head>
 
 <body>
-<nav class="navbar" style="background-color: ; margin-bottom: 0; border-radius:0;">
+<nav class="navbar" style="background-color:#19aff5 ; margin-bottom: 0; border-radius:0;">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -29,7 +29,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
       </button>
-      <a class="navbar-brand crud" style="color: black !important;" href="../user/home.php">Waterford FC</a>
+      <a class="navbar-brand crud" style="color: white !important;" href="../user/home.php">Waterford FC</a>
     </div>
     
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,7 +37,7 @@
       <ul class="nav navbar-nav navbar-right">
         
         <li class="dropdown">
-          <a href="#" style="color: black ; background-color:white;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['firstname']; ?> <span class="caret"></span></a>
+          <a href="#" style="color: white ; background-color:#19aff5;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['firstname']; ?> <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="../users/profile.php?firstname=<?php echo $_SESSION['firstname']; ?>">View Profile</a></li>
             <li role="separator" class="divider"></li>
@@ -50,14 +50,14 @@
   </div>
 </nav>
 
-<div class="jumbotron jumbo">
-    <h2 class="text-center" style="font-size:70px; font-weight: 600;">Welcome <?php echo $_SESSION['firstname']; ?></h2>
+<div class="jumbotron jumbo" style="background-color:#74b5f7;">
+    <h2 class="text-center" style="font-size:60px; font-weight: 400;">Welcome <?php echo $_SESSION['firstname']; ?></h2>
     <h4 class="text-center" style="font-size: 30px;">(Edit Your profile)</h4>
 </div>
 
 <div class="container">
     <br>
-    <h1 class="text-center">EDIT YOUR PROFILE</h1>
+    <h1 class="text-center">Edit Your Profile</h1>
     <br>
     
     <div class="row" style="border: 1px solid #e7e7e7;">
