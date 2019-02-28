@@ -18,7 +18,8 @@
         
         if(!empty($admin_email) && !empty($admin_password)){
             
-            if($email == $email_admin && $pass == $pass_admin){
+            if($email == $email_admin && $pass == $pass_admin)
+            {
                 header("Location: ./admin/dashboard.php");
                 
                 $_SESSION['email'] = $email_admin;
@@ -33,6 +34,6 @@
                         <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
                         Email and Password Fields Cannot be Empty.</div>";
         }
-    }
+    } 
 
 ?>

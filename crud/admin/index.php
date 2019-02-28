@@ -15,8 +15,9 @@ function not_values($tbl){
     echo "<div style='font-size:30px;'>{$count}</div>";
 }
 
-?>
+?> 
 
+<!-- <i class="fas fa-tachometer-alt"></i> -->
 
 
 
@@ -25,10 +26,11 @@ function not_values($tbl){
     <div class="col-md-2 admin-links">
        <h3 class="text-center">Admin Dashboard</h3>
         <ul class="">
-            <li><a href="dashboard.php"><i class="fa fa-tachometer" aria-hidden="true"></i>  Dashboard</a></li>
-            <li><a href="./admin_scripts/view.php"><i class="fa fa-user" aria-hidden="true"></i>  View All Users</a></li>
-            <li><a href="./admin_scripts/verified.php"><i class="fa fa-check" aria-hidden="true"></i>   Verified Users</a></li>
-            <li><a href="./admin_scripts/not_verified.php"><i class="fa fa-times" aria-hidden="true"></i>  Not Verified Users</a></li>
+            <li><a href="dashboard.php"><i class="fas fa-tachometer-alt" aria-hidden="true"></i>   Dashboard</a></li>
+            <li><a href="./admin_scripts/view.php"><i class="fas fa-users" aria-hidden="true"></i>   View All Users</a></li>
+            <li><a href="./admin_scripts/verified.php"><i class="fas fa-check" aria-hidden="true"></i>   Verified Users</a></li>
+            <li><a href="./admin_scripts/not_verified.php"><i class="far fa-times-circle" aria-hidden="true"></i>  Not Verified Users</a></li>
+            <!--<li><a href="./admin_scripts/not_verified.php"><i class="fab fa-php"></i>   Test</a></li> -->
         </ul>
     </div>
 

@@ -1,4 +1,4 @@
-<?php include("/admin_scripts/admin.php"); ?>
+<?php include("./admin/admin_scripts/admin.php"); ?>
 
 <div class="container">
     <div class="row" style="text-align:center;">
@@ -8,7 +8,7 @@
     
     <div class="row signup">
         <div class="row">
-            <h3>Welcome Admin, Please Login</h3>
+            <h3>Welcome Admin</h3>
         </div>
         
         

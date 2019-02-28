@@ -8,10 +8,10 @@ body{
 
 .row.content{
     height:  750px;
-}
+} 
 
 .admin-links{
-    background-color: black;
+    background-color: lightgrey;
     height: 100%;
 }
 
@@ -24,7 +24,7 @@ body{
 
 .admin-links ul a{
     text-decoration: none !important;
-    color: white !important;
+    color: black !important;
     font-size: 18px;
 }
 
@@ -34,6 +34,14 @@ body{
 
 .fa{
     padding: 0px 15px 0px 0px;
+}
+
+.fas{
+    padding: 0px 20px 0px 0px;
+}
+
+.far{
+    padding: 0px 20px 0px 0px;
 }
 
 .dash a{
@@ -62,4 +70,8 @@ body{
 .rowDiv{
     margin: 20px 0px 20px 0px;
 }
+
+
+
+
 
