@@ -121,16 +121,16 @@ $(document).ready(function(){
                                 //select primary key to remove account and ajax back to not verified
                                 echo "<td><a href='not_verified.php?delete={$id}' class='btn btn-danger'>Delete <i class='fa fa-remove' aria-hidden='true'></i></a></td>";
                                 echo "</tr>";
-                            }
-                        //delete the account 
-                        if(isset($_GET['delete'])){
-                            $query = "DELETE FROM signup WHERE id = {$_GET['delete']}";
-                            $delete_query = mysqli_query($connection, $query);
-                            
-                            header("Location: not_verified.php");
-                        }
-                        
-                        ?>
+                                }
+                                //delete the account 
+                                if(isset($_GET['delete'])){
+                                    $query = "DELETE FROM signup WHERE id = {$_GET['delete']}";
+                                    $delete_query = mysqli_query($connection, $query);
+
+                                    header("Location: not_verified.php");
+                                }
+
+                                ?>
                         
                         
                     </tbody>

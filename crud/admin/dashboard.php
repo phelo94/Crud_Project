@@ -46,7 +46,7 @@
         <li class="dash">
             <a href="#"><?php echo $_SESSION['email']; ?></a>
         </li>
-        
+        <!--  logout is already made, so call it -->
         <li class="dash">
             <a href="../user/logout.php">Logout</a>
         </li>
