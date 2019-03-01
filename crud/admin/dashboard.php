@@ -26,6 +26,7 @@
 <!-- href="css/admin.css -->
 <link rel="stylesheet" href="css/admin.css">
 
+<!-- source for google charts-->
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
  
@@ -34,7 +35,8 @@
 <body>
 <nav class="navbar navbar-inverse" style="border-radius: 0; margin: 0;">
   <div class="container">
-    <div class="navbar-header crud">Waterford FC</div>
+    <div class="navbar-brand crud" href="#">Waterford FC</div>
+   <!-- <a class="navbar-brand crud" href="#">Waterford FC</a> -->
     
         <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

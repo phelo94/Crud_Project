@@ -6,12 +6,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ADMIN DASHBOARD</title>
+    <title>Admin Dashboard</title>
     
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
@@ -22,12 +24,13 @@
 
 </head>
 
-<script>
-$(document).ready(function(){
-    $("time.timeago").timeago();
-}); 
-    
-</script>
+            <!-- timeago call -->
+            <script>
+            $(document).ready(function(){
+                $("time.timeago").timeago();
+            }); 
+
+            </script>
 
 <body>
 <nav class="navbar navbar-inverse" style="border-radius: 0; margin: 0;">
@@ -66,12 +69,24 @@ $(document).ready(function(){
     <div class="col-md-2 admin-links">
        <h3 class="text-center">Admin Dashboard</h3>
         <ul class="">
-            <li><a href="../dashboard.php"><i class="fa fa-tachometer" aria-hidden="true"></i>  Dashboard</a></li>
-            <li><a href="view.php"><i class="fa fa-user" aria-hidden="true"></i>  View All Users</a></li>
-            <li><a href="verified.php"><i class="fa fa-check" aria-hidden="true"></i>   Verified Users</a></li>
-            <li><a href="not_verified.php"><i class="fa fa-times" aria-hidden="true"></i>  Not Verified Users</a></li>
+            <li><a href="../dashboard.php"><i class="fas fa-tachometer-alt" aria-hidden="true"></i>   Dashboard</a></li>
+            <li><a href="view.php"><i class="fas fa-users" aria-hidden="true"></i>  View All Users</a></li>
+            <li><a href="verified.php"><i class="fas fa-check" aria-hidden="true"></i>  Verified Users</a></li>
+            <li><a href="not_verified.php"><i class="far fa-times-circle" aria-hidden="true"></i>  Not Verified Users</a></li>
         </ul>
     </div>
+    
+    <!--
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    
+    
+    <li><a href="dashboard.php"><i class="fas fa-tachometer-alt" aria-hidden="true"></i>   Dashboard</a></li>
+            <li><a href="./admin_scripts/view.php"><i class="fas fa-users" aria-hidden="true"></i>   View All Users</a></li>
+            <li><a href="./admin_scripts/verified.php"><i class="fas fa-check" aria-hidden="true"></i>   Verified Users</a></li>
+            <li><a href="./admin_scripts/not_verified.php"><i class="far fa-times-circle" aria-hidden="true"></i>  Not Verified Users</a></li>
+    
+    -->
 
     <div class="col-md-10">
         
@@ -88,6 +103,7 @@ $(document).ready(function(){
                             <th>Lastname</th>
                             <th>Email</th>
                             <th>Last Updated</th>
+                            <th>Created</th>
                         </tr>
                     </thead>
                     
@@ -97,20 +113,22 @@ $(document).ready(function(){
                         
                             $query = "SELECT * FROM signup";
                             $all_users = mysqli_query($connection, $query);
-                        
+                        // while array to check the db 
                             while($row = mysqli_fetch_array($all_users)){
                                 $id = $row['id'];
                                 $firstname = $row['firstname'];
                                 $lastname = $row['lastname'];
                                 $email = $row['email'];
                                 $date = $row['date_time'];
-                                
+                    //then echo data to display it             
                                 echo "<tr>";
                                 echo "<td>{$id}</td>";
                                 echo "<td>{$firstname}</td>";
                                 echo "<td>{$lastname}</td>";
                                 echo "<td>{$email}</td>";
-//                                echo "<td>{$date}</td>";
+                                echo "<td>{$date}</td>";
+                                
+                                //<!-- timeago call -->
                                 echo "<td><time class='timeago' datetime='{$date}'>{$date}</time></td>";
                                 
                                 echo "</tr>";

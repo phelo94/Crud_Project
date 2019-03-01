@@ -56,11 +56,15 @@ body{
 }
 
 .panel-green{
-    background-color: #49e226;
+    background-color: #31C317;
 }
 
 .panel-red{
     background-color: #dd4639;
+}
+
+panel-yellow{
+    background-color: #f1ecae;
 }
 
 .font_awesome{
@@ -71,6 +75,18 @@ body{
     margin: 20px 0px 20px 0px;
 }
 
+.table{
+    color: black;
+    text-align: center;
+}
+
+
+.btn{
+
+  margin: auto;
+  width: 70%;
+  border: 3px  lightgrey;
+}
 
 
 

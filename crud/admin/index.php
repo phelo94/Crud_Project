@@ -4,7 +4,7 @@ function count_values($tbl){
     
     $query = mysqli_query($connection, "SELECT * FROM $tbl");
     $count = mysqli_num_rows($query);
-    echo "<div style='font-size:30px;'>{$count}</div>";
+    echo "<div style='font-size:25px;'>{$count}</div>";
 }
 
 function not_values($tbl){
@@ -12,7 +12,7 @@ function not_values($tbl){
     
     $query = mysqli_query($connection, "SELECT * FROM $tbl WHERE is_active = '0'");
     $count = mysqli_num_rows($query);
-    echo "<div style='font-size:30px;'>{$count}</div>";
+    echo "<div style='font-size:25px;'>{$count}</div>";
 }
 
 ?> 
@@ -38,11 +38,12 @@ function not_values($tbl){
 
         <div class="row rowDiv">
             <div class="col-lg-4 col-md-6">
+               <!-- color -->
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
-                                <i class="fa fa-user fa-5x"></i>
+                                <i class="fas fa-users fa-4x"></i>
                             </div>
                             
                             <div class="col-xs-9 text-right">
@@ -54,11 +55,11 @@ function not_values($tbl){
                         <a href="./admin_scripts/view.php">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></span>
+                                <span class="pull-right"><i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span>
                                 <div class="clearfix"></div>
                             </div>
                         </a>
-                        
+                        <!--  <i class="fas fa-users"></i> -->
                     </div>
                 </div>
                 
@@ -69,7 +70,7 @@ function not_values($tbl){
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
-                                <i class="fa fa-check fa-5x font_awesome"></i>
+                                <i class="fa fa-check fa-4x font_awesome"></i>
                             </div>
                             
                             <div class="col-xs-9 text-right" style="color: #ffffff;">
@@ -81,7 +82,7 @@ function not_values($tbl){
                         <a href="./admin_scripts/verified.php">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></span>
+                                <span class="pull-right"><i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span>
                                 <div class="clearfix"></div>
                             </div>
                         </a>
@@ -96,7 +97,7 @@ function not_values($tbl){
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
-                                <i class="fa fa-remove fa-5x font_awesome"></i>
+                                <i class="far fa-times-circle fa-4x font_awesome"></i>
                             </div>
                             
                             <div class="col-xs-9 text-right" style="color: #ffffff;">
@@ -108,17 +109,19 @@ function not_values($tbl){
                         <a href="./admin_scripts/not_verified.php">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></span>
+                                <span class="pull-right"><i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span>
                                 <div class="clearfix"></div>
                             </div>
                         </a>
                         
+                        <!--   far fa-times-circle ,,,,,,,   <i class="fas fa-arrow-alt-circle-right"></i>-->
                     </div>
                 </div>
                 
             </div>
-        </div><!-- row End -->
+        </div>
         
+        <!--include chart here -->
         <?php include("./admin_scripts/admin_chart.php"); ?>
         <div id="columnchart_material" style="width: 80%; height: 500px; margin:0 auto;"></div>
         
@@ -128,4 +131,4 @@ function not_values($tbl){
 </div>
 
 
-</div><!-- row content End -->
+</div>

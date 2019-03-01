@@ -7,6 +7,7 @@
     $query = mysqli_query($connection, "SELECT * FROM profile");
     $verified_users = mysqli_num_rows($query);
 
+//where activation = active,, which is is_active = '0'
     $query = mysqli_query($connection, "SELECT * FROM signup WHERE is_active = '0'");
     $not_verified_users = mysqli_num_rows($query);
 
@@ -19,12 +20,14 @@
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Data', 'Count'],
-            
+          ['Data', 'Players'],
+            //the text and data displayed in the bar 
             <?php
                 $text = ['Total Users', 'Verified Users', 'Not Verified Users'];
                 $numbers = [$user_count, $verified_users, $not_verified_users];
             
+            //looping from 0 to count the data and keep going through an array 
+            //stackoverflow 
                 for($i=0; $i < count($numbers); $i++){
                     echo "['{$text[$i]}'" . "," . "{$numbers[$i]}], ";
                 }

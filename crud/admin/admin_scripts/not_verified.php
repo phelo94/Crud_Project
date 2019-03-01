@@ -13,6 +13,8 @@
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <!-- Latest compiled and minified JavaScript -->
@@ -66,10 +68,10 @@ $(document).ready(function(){
     <div class="col-md-2 admin-links">
        <h3 class="text-center">Admin Dashboard</h3>
         <ul class="">
-            <li><a href="../dashboard.php"><i class="fa fa-tachometer" aria-hidden="true"></i>  Dashboard</a></li>
-            <li><a href="view.php"><i class="fa fa-user" aria-hidden="true"></i>  View All Users</a></li>
-            <li><a href="verified.php"><i class="fa fa-check" aria-hidden="true"></i>   Verified Users</a></li>
-            <li><a href="not_verified.php"><i class="fa fa-times" aria-hidden="true"></i>  Not Verified Users</a></li>
+            <li><a href="../dashboard.php"><i class="fas fa-tachometer-alt" aria-hidden="true"></i>   Dashboard</a></li>
+            <li><a href="view.php"><i class="fas fa-users" aria-hidden="true"></i>  View All Users</a></li>
+            <li><a href="verified.php"><i class="fas fa-check" aria-hidden="true"></i>  Verified Users</a></li>
+            <li><a href="not_verified.php"><i class="far fa-times-circle" aria-hidden="true"></i>  Not Verified Users</a></li>
         </ul>
     </div>
 
@@ -87,8 +89,11 @@ $(document).ready(function(){
                             <th>Lastname</th>
                             <th>Email</th>
                             <th>Last Updated</th>
+                            <th>Verification Status</th>
+                            <th>Remove Account</th>
                         </tr>
                     </thead>
+                    
                     
                     <tbody>
                         <?php
@@ -113,10 +118,11 @@ $(document).ready(function(){
                                 echo "<td><time class='timeago' datetime='{$date}'>{$date}</time></td>";
                                 
                                 echo "<td><a href='#' class='btn btn-info'>Pending... </a></td>";
+                                //select primary key to remove account and ajax back to not verified
                                 echo "<td><a href='not_verified.php?delete={$id}' class='btn btn-danger'>Delete <i class='fa fa-remove' aria-hidden='true'></i></a></td>";
                                 echo "</tr>";
                             }
-                        
+                        //delete the account 
                         if(isset($_GET['delete'])){
                             $query = "DELETE FROM signup WHERE id = {$_GET['delete']}";
                             $delete_query = mysqli_query($connection, $query);
