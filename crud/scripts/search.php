@@ -14,15 +14,16 @@
             $count = mysqli_num_rows($send_query);
             
             if(!$send_query){
-                die("SEARCH NOT FOUND " . mysqli_error($coonection));
+                die("No Information Found " . mysqli_error($coonection));
             }
             
             if($count <= 0){
                 echo "<div class='alert alert-danger email_alert'>
                     <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times</a>
-                    Sorry, no search result was found.</div>";
+                    Sorry, The name doesnt exists.</div>";
+                //copy the while loop from prev use
             }else{
-while($row = mysqli_fetch_array($send_query)){
+                while($row = mysqli_fetch_array($send_query)){
         $user_id = $row['user_id'];
         $firstname = $row['firstname'];
         $lastname = $row['lastname'];
@@ -32,6 +33,7 @@ while($row = mysqli_fetch_array($send_query)){
         $img = $row['image'];
     
         //delimiter  not returning full results 
+    
 $search_result = <<<DELIMETER
     <div class="col-sm-4 col-md-4 col-lg-4" style="">
         <div class="thumbnail">
@@ -55,12 +57,19 @@ DELIMETER;
 echo $search_result;
     }
             }
+            /*
             
+                        if($count <= 0){
+                echo "<div class='alert alert-danger email_alert'>
+                    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times</a>
+                    Sorry, The name doesnt exists.</div>";
+                //copy the while loop from prev use
+            */
             
         }else{
             echo "<div class='alert alert-danger email_alert'>
                     <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times</a>
-                    No Result Found</div>";
+                    No Information Found</div>";
         }
     }
 

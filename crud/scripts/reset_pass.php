@@ -42,7 +42,7 @@
                                 <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times</a>
                                 Password Must Be Between 5 and 15 Characters and Must Contain At Least One Lowercase Letter One Uppercase Letter and One Digit.</div>";
                     }else{
-                        
+                        //forgetten pasword if else statement
                         if($pass_word !== $cpass_word){
                             $confirm_error = "<div class='alert alert-danger email_alert'>
                                 <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times</a>
@@ -55,7 +55,7 @@
                             if($update_query){
                                 $update_good = "<div class='alert alert-success email_alert'>
                                     <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times</a>
-                                    Your Password Has Been Resetted.</div>";
+                                    Password Updated.</div>";
                             } 
                         }
                         

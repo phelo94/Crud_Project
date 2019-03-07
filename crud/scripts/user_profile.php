@@ -25,7 +25,7 @@
         $user_lastname = mysqli_real_escape_string($connection, $_POST['lastname']);
         $gender = mysqli_real_escape_string($connection, $_POST['gender']);
         $intro = mysqli_real_escape_string($connection, $_POST['intro']);
-        $quote = mysqli_real_escape_string($connection, $_POST['quote']);
+        //$quote = mysqli_real_escape_string($connection, $_POST['quote']);
         
         
         //not storing image in db, 
@@ -36,7 +36,7 @@
         move_uploaded_file($user_temp_image, "../images/$user_image");
         //use now() statement to get the time 
         if(!empty($user_firstname) && !empty($user_lastname) && !empty($user_email) && !empty($gender) && !empty($intro) && !empty($user_image) && !empty($quote)){
-            $query_send = "INSERT INTO profile(user_id, firstname, lastname, email, gender, quote, intro, image, date_time) VALUES('{$id}', '{$user_firstname}', '{$user_lastname}', '{$user_email}', '{$gender}', '{$quote}', '{$intro}', '{$user_image}', now()) ";
+            $query_send = "INSERT INTO profile(user_id, firstname, lastname, email, gender, intro, image, date_time) VALUES('{$id}', '{$user_firstname}', '{$user_lastname}', '{$user_email}', '{$gender}',  '{$intro}', '{$user_image}', now()) ";
             
             //i need to send the connection and what ever i called the insert above = $   ? 
             $send = mysqli_query($connection, $query_send);

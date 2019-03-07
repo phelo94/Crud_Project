@@ -103,7 +103,7 @@ echo $users;
 </head>
 
 <script>
-//First we get the document objct model ready
+// document objct model ready
 $(document).ready(function(){
     
     $("#search").click(function(){

@@ -61,10 +61,11 @@
 </div>
 
 <div class="container rowData">
+    <!--
     <br>
     <p class="text-center" style="font-size:30px; font-style:italic"><?php echo $quote; ?></p>
     <br>
-    
+    -->
     <div class="row" style="border: 1px solid #e7e7e7;">
         <div class="col-sm-4" style="margin-top:20px;">
             <div class="form-group">
@@ -81,7 +82,9 @@
     
     
 </div>   
-
+<br>
+<br>
+<br>
 <?php include("../user/footer.php"); ?>
 </body>
 </html>

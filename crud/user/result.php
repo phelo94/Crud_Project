@@ -8,7 +8,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>INDEX PAGE</title>
+    <title>Index Page</title>
     
     <!-- simular to last page -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -118,29 +118,14 @@ echo $profile_links2;
         <div class="col-md-3">
             <?php
             
-            /*
-            
-            
-            if($count <= 0){
-                    echo "<div class='col-sm-10 col-md-10 col-lg-10'>
-                                < style='border:none'>
-                                    <h3 style='font-weight:bold;'>$user_firstname $user_lastname</h3>
-
-                                    <a href='../users/profile.php?id=$user_id&&$firstname&&$lastname&&email'>
-                                        <span class='fa fa-user fa-5x' style='font-size:10em;' aria-hidden='true'></span>
-                                    </a>
-                                </center><br>
-                                <a href='../profile.php' class=' btn-primary'>Complete Your Profile</a>
-                            </div>"
-            
-            */
-            
                 if($count <= 0){
                     echo "<div class='col-sm-10 col-md-10 col-lg-10'>
                                 <center class='thumbnail' style='border:none'>
-                                    <h3 style='font-weight:bold;'>$user_firstname $user_lastname</h3>
+                                
+                                    <h3 style='font-weight:bold;'>$firstname $lastname</h3>
 
-                                    <a href='../users/profile.php?id=$user_id&&$firstname&&$lastname'>
+
+                                    <a href='../users/profile.php?id=$firstname&&$lastname'>
                                         <span class='fa fa-user fa-5x' style='font-size:10em;' aria-hidden='true'></span>
                                     </a>
                                 </center><br>
@@ -148,6 +133,9 @@ echo $profile_links2;
                             </div>";
                 }else{
                     //But if count > 0 the user should see this
+                    
+                    // <h3 style='font-weight:bold;'>$user_firstname $user_lastname</h3>
+                    // original       <a href='../users/profile.php?id=$user_id&&$firstname&&$lastname'>
                     echo "<div class='col-sm-10 col-md-10 col-lg-10 clearfix'>
                                 <center class='thumbnail' style='border:none'>
                                     <h3 style='padding-left:; font-weight:bold;'>Hi, $firstname $lastname</h3>
@@ -162,40 +150,6 @@ echo $profile_links2;
             ?>
         </div>
         
-        <div class="col-md-9">
-            
-            <div class="row carousel-holder">
-
-                    <div class="col-md-12">
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            </ol>
-
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <img class="slide-image" src="../images/slider1.jpeg" alt="">
-                                </div>
-                                <div class="item">
-                                    <img class="slide-image" src="../images/slider1.jpeg" alt="">
-                                </div>
-                                <div class="item">
-                                    <img class="slide-image" src="../images/slider1.jpeg" alt="">
-                                </div>
-                            </div>
-
-                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left"></span>
-                            </a>
-                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
-                            </a>
-                        </div>
-                    </div>
-
-                </div><br><br>
                 
                 <div class="row">
 <!--                  The search result is displayed here because of this search.php file included here,, add the search script -->
@@ -207,7 +161,7 @@ echo $profile_links2;
         
     </div>
     
-</div>   
+  
 
 
 </body>

@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>INDEX PAGE</title>
+    <title>Index Page</title>
     
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -105,13 +105,13 @@
                    </div>
                </div><br>
                
-               
+               <!--
                <div class=" form-group">
                    <label for="" class="control-label">About me</label>
                    <textarea name="quote" class="form-control" id="" cols="30" rows="10"></textarea>
                </div><br>
                
-               
+               -->
                
                <div class=" form-group">
                    <label for="" class="control-label">About Me</label>

@@ -70,6 +70,10 @@ input[type="submit"]{
 .thumbnail{
     height: 250px;
     padding-top: 18px;
+    width: 80%;
+    background-color: white;
+    opacity: 0.5;
+    filter: alpha(opacity=10);
 }
 
 .thumbnail a{

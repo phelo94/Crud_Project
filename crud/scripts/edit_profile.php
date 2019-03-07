@@ -26,7 +26,7 @@
         $user_firstname = $row['firstname'];
         $user_lastname = $row['lastname'];
         $user_gender = $row['gender'];
-        $user_quote = $row['quote'];
+        //$user_quote = $row['quote'];
         $user_intro = $row['intro'];
         $user_img = $row['image'];
         $date = $row['date_time'];
@@ -38,7 +38,7 @@
         $user_firstname = mysqli_real_escape_string($connection, $_POST['firstname']);
         $user_lastname = mysqli_real_escape_string($connection, $_POST['lastname']);
         $user_gender = mysqli_real_escape_string($connection, $_POST['gender']);
-        $user_quote = mysqli_real_escape_string($connection, $_POST['quote']);
+        //$user_quote = mysqli_real_escape_string($connection, $_POST['quote']);
         $user_intro = mysqli_real_escape_string($connection, $_POST['intro']);
         
         $user_img = $_FILES['image']['name'];
@@ -64,7 +64,7 @@
             $update .= "lastname = '{$user_lastname}', ";
             $update .= "email = '{$user_email}', ";
             $update .= "gender = '{$user_gender}', ";
-            $update .= "quote = '{$user_quote}', ";
+           // $update .= "quote = '{$user_quote}', ";
             $update .= "intro = '{$user_intro}', ";
             $update .= "image = '{$user_img}', ";
             $update .= "date_time = now() ";

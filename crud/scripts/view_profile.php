@@ -18,14 +18,14 @@
         $email = $row['email'];
         $gender = $row['gender'];
         $intro = $row['intro'];
-        $quote = $row['quote'];
+        //$quote = $row['quote'];
         $user_image = $row['image'];
     }
 //image not saving in the database 
     function profile_image(){
         global $count, $user_image;
         
-        //if the data is still the palceholder then the update should fail,, else then find the source image and add the image 
+        //if the data is still the placeholder then the update should fail,, else then find the source image and add the image 
         if($count <= 0){
             echo "<img src='http://placehold.it/250x250' style='margin-left: 40px;>";
         }else{
@@ -58,7 +58,7 @@
             echo "<div class='alert alert-info email_alert text-center' style='margin: 0px 10px 20px 0px;'>
                 Gender Has Not Been Updated
                 </div>";
-            
+        
             echo "<div class='alert alert-info email_alert text-center' style='margin: 0px 10px 20px 0px;'>
                 Description Has Not Been Updated
                 </div>";

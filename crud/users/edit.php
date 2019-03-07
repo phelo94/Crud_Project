@@ -110,10 +110,10 @@
                        </select>
                    </div>
                </div><br>
-               
+               <!--
                <div class=" form-group">
                    <label for="" class="control-label">General Description</label>
-                   <textarea name="quote" class="form-control" id="" cols="30" rows="10"><?php echo $user_quote; ?></textarea>
+                   <textarea name="quote" class="form-control" id="" cols="30" rows="10"><php echo $user_quote; ?></textarea>
                </div><br>
                
                <!--
