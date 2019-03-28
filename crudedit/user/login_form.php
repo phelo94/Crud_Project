@@ -2,17 +2,17 @@
 
 
 <div class="container">
-    <div class="row" style="text-align:center;">
-        <h3>USER LOGIN</h3>
+    <div class="row col-md-offset-2">
+        <h3>Player Login</h3>
     </div>
     
-    <div class="row sub_msg">
+    <div class="col-md-offset-2">
         <p>Please Login Below</p>
     </div>
     
     <div class="row signup">
         <div class="row">
-            <h3>Welcome, Please Login</h3>
+            <h3>Login</h3>
         </div>
         
         

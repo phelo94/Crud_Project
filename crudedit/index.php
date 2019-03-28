@@ -28,11 +28,15 @@
 
 <link rel="stylesheet" href="./css/custom.css">
 
+<link rel="stylesheet" href="./css/style.css">
+
 </head>
 
 
+
+
 <body>
-<nav class="navbar" style="background-color: #19aff5;">
+<nav class="navbar" style="background-color: #fff;">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -42,22 +46,27 @@
       </button>
       <p><a class="navbar-brand crud" href="#">Waterford FC</a></p>
       <p><img src="images/Waterford_FC_Crest.png" width="116" height="125" alt=""/> </p>
+      
     </div>
-    
+    <?php include './cart/inc/header.php'; ?>
+<?php include './cart/inc/nav2.php'; ?> 
   </div>
 </nav>
+<br>
+<br>
+
 <div class="container">
 <!--We use bootstrap to create tabs on the index.php page-->
-    <ul class="nav nav-tabs" id="myTab">
+    <ul class="nav nav-tabs col-md-offset-1" id="myTab">
        <li class="active"><a data-toggle='tab' href="#index">Index</a></li>
        <li><a data-toggle='tab' href="#login">Login</a></li>
        <li><a data-toggle='tab' href="#signup">Sign Up</a></li>
        <li><a data-toggle='tab' href="#admin">Admin</a></li>
-       <li><a href="cart/index.php">Shop</a> </li>
+       <!--<li><a href="cart/index.php">Shop</a> </li> -->
     </ul>
     
-<!--    Here we add the forms elements of the various tabs-->
-    <div class="tab-content">
+<!--    Here  add the forms elements of the various tabs  col-md-offset-3 to center -->
+    <div class="tab-content col-md-offset-3">
        <div id="index" class="tab-pane fade active in">
            <?php include("./user/index_page.php"); ?>
        </div>
@@ -74,11 +83,11 @@
            <?php include("admin/admin_login.php"); ?>
        </div>
        
-       
+       <!--
        <div id="shop" class="tab-pane fade">
            <a data-toggle='tab' href="#shop">shopping</a>
        </div>
-       <!--
+       
         <div id="admin" class="tab-pane fade">
            include("admin/adminlogin.php"); ?>
        </div>
@@ -88,9 +97,14 @@
         
 </div> 
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-
-
+<?php include 'user/footer.php'; ?> 
 
 <script src="./js/typed.js"></script>
 <script src="./js/reg.js"></script>

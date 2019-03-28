@@ -1116,16 +1116,16 @@ transform:translateY(-50%);
 /* 6. ========== Footer End Here==========*/
 
 #footer2 {
-	background:#80807A;
-	padding:40px 0 0px;
-    width: 1000px;
+	background:#000;
+	padding:50px 0 0px;
+    width: 1350px;
     align-content: left;
     margin: 50px ;
     align-items: stretch
 }
 
 #footer2 p {
-	color:#000;
+	color:#fff;
 }
 
 

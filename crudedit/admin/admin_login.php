@@ -1,7 +1,7 @@
 <?php include("./admin/admin_scripts/admin.php"); ?>
 
 <div class="container">
-    <div class="row" style="text-align:center;">
+    <div class="row col-md-offset-2">
         <h3>ADMIN LOGIN</h3>
     </div>
     

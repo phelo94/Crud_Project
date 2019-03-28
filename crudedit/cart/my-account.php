@@ -127,4 +127,4 @@
 	</section>
 	
 	<!-- FOOTER -->
-<?php include 'inc/footer.php'; ?> 
+	<?php include '../user/footer.php'; ?> 

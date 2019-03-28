@@ -5,11 +5,11 @@
    
 
 <div class="container">
-    <div class="row" style="text-align:center;">
-        <h3>PLAYER SIGN UP</h3>
+    <div class="row col-md-offset-2">
+        <h3>Player Sign Up</h3>
     </div>
     
-    <div class="row sub_msg">
+    <div class="col-md-offset-1">
         <p>Please fill in your details below to Sign Up</p>
     </div>
     
