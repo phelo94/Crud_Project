@@ -1,0 +1,26 @@
+Admin
+-id
+-FirstName
+-LastName
+-username/email
+-password
+
+category
+-id
+-categoryname
+
+products
+-id
+-name
+-categoryid
+-price
+-thumbnail
+-description
+
+Users
+Users Meta
+
+Orders
+orderItems
+
+wishlist
