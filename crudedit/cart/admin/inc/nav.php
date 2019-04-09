@@ -4,7 +4,7 @@
 				<div id="mobnav-btn">Menu <i class="fa fa-bars"></i></div>
 				<ul class="sf-menu">
 					<li>
-						<a href="index.php">Home</a>
+						<a href="index.php">Dashboard</a>
 						
 					<li>
 						<a href="#">Categories</a>

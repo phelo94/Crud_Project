@@ -24,7 +24,7 @@
 				<div class="row">
 					<div class="page_header text-center">
 					<br>
-						<h2>Home Page</h2>
+						<h2>Shopping Cart Admin</h2>
 						<p>Welcome</p>
 					</div>
 					<br>

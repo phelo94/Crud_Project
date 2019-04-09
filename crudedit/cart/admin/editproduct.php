@@ -1,11 +1,15 @@
-<!-- Restrict login to Admin -->
 <?php
 	session_start();
 	require_once '../config/connect.php';
 	if(!isset($_SESSION['email']) & empty($_SESSION['email'])){
 		header('location: login.php');
 	}
-//https://www.tutorialspoint.com/php/php_file_uploading.htm
+
+	if(isset($_GET) & !empty($_GET)){
+		$id = $_GET['id'];
+	}else{
+		header('location: products.php');
+	}
 
 	if(isset($_POST) & !empty($_POST)){
 		$prodname = mysqli_real_escape_string($connection, $_POST['productname']);
@@ -13,57 +17,45 @@
 		$category = mysqli_real_escape_string($connection, $_POST['productcategory']);
 		$price = mysqli_real_escape_string($connection, $_POST['productprice']);
 
-//image file upload https://www.w3schools.com/php/php_file_upload.asp
-        //https://stackoverflow.com/questions/13465929/php-upload-image
-        
-        
 		if(isset($_FILES) & !empty($_FILES)){
 			$name = $_FILES['productimage']['name'];
 			$size = $_FILES['productimage']['size'];
 			$type = $_FILES['productimage']['type'];
 			$tmp_name = $_FILES['productimage']['tmp_name'];
 
-            //done in bytes ,, 10 megabytes
 			$max_size = 10000000;
 			$extension = substr($name, strpos($name, '.') + 1);
 
 			if(isset($name) && !empty($name)){
-                //check file names / sizes
 				if(($extension == "jpg" || $extension == "jpeg") && $type == "image/jpeg" && $size<=$max_size){
-                    //error changed file to uploads,,, not upload
 					$location = "uploads/";
-					if(move_uploaded_file($tmp_name, $location.$name)){
-						//$smsg = "Uploaded Successfully";
-						$sql = "INSERT INTO products (name, description, catid, price, thumb) VALUES ('$prodname', '$description', '$category', '$price', '$location$name')";
-						$res = mysqli_query($connection, $sql);
-						if($res){
-							//echo "Product Created";
-							header('location: products.php');
-						}else{
-							$fmsg = "Failed to Create Product";
-						}
+					$filepath = $location.$name;
+					if(move_uploaded_file($tmp_name, $filepath)){
+						$smsg = "Uploaded Successfully";
 					}else{
 						$fmsg = "Failed to Upload File";
 					}
 				}else{
-					$fmsg = "Only JPG/PNG files are allowed and should be 10MB or less!";
+					$fmsg = "Only JPG/PNG files are allowed and should be less that 10MB";
 				}
 			}else{
 				$fmsg = "Please Select a File";
 			}
+            //route to the img  $GET_   //// £_POST
 		}else{
+			$filepath = $_POST['filepath'];
+		}	
 
-			$sql = "INSERT INTO products (name, description, catid, price) VALUES ('$prodname', '$description', '$category', '$price')";
-			$res = mysqli_query($connection, $sql);
-			if($res){
-                //redirect to products
-				header('location: products.php');
-			}else{
-				$fmsg =  "Failed to Create Product";
-			}
+		$sql = "UPDATE products SET name='$prodname', description='$description', catid='$category', price='$price', thumb='$filepath' WHERE id = $id";
+		$res = mysqli_query($connection, $sql);
+		if($res){
+			$smsg = "Product Updated";
+		}else{
+			$fmsg = "Failed to Update Product";
 		}
 	}
 ?>
+
 
 <!-- Header  -->
 
@@ -72,40 +64,41 @@
 	<!-- Navigation  -->
 <?php include 'inc/nav.php'; ?> 
 
-<br>
+                    <br>
 					<br>
 					<br>
-					
 	
-	<!-- SHOP CONTENT -->
 <section id="content">
 	<div class="content-blog">
 		<div class="container">
 		<?php if(isset($fmsg)){ ?><div class="alert alert-danger" role="alert"> <?php echo $fmsg; ?> </div><?php } ?>
 		<?php if(isset($smsg)){ ?><div class="alert alert-success" role="alert"> <?php echo $smsg; ?> </div><?php } ?>
-		
-		<!--     https://www.w3schools.com/tags/att_form_enctype.asp     -->
+			<?php 	
+				$sql = "SELECT * FROM products WHERE id=$id";
+				$res = mysqli_query($connection, $sql); 
+				$r = mysqli_fetch_assoc($res); 
+			?>
 			<form method="post" enctype="multipart/form-data">
 			  <div class="form-group">
+			  <input type="hidden" name="filepath" value="<?php echo $r['thumb']; ?>">
 			    <label for="Productname">Product Name</label>
-			    <input type="text" class="form-control" name="productname" id="Productname" placeholder="Product Name">
+			    <input type="text" class="form-control" name="productname" id="Productname" placeholder="Product Name" value="<?php echo $r['name']; ?>">
 			  </div>
 			  <div class="form-group">
 			    <label for="productdescription">Product Description</label>
-			    <textarea class="form-control" name="productdescription" rows="3"></textarea>
+			    <textarea class="form-control" name="productdescription" rows="3"><?php echo $r['description']; ?></textarea>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="productcategory">Product Category</label>
 			    <select class="form-control" id="productcategory" name="productcategory">
-				  <option value="">--- Select Category --- </option>
-				  <!-- select from products added --> 
-				  <?php 	
-					$sql = "SELECT * FROM category";
-					$res = mysqli_query($connection, $sql); 
-					while ($r = mysqli_fetch_assoc($res)) {
+			    <?php 	
+                    //category result = catres
+					$catsql = "SELECT * FROM category";
+					$catres = mysqli_query($connection, $catsql); 
+					while ($catr = mysqli_fetch_assoc($catres)) {
 				?>
-					<option value="<?php echo $r['id']; ?>"><?php echo $r['name']; ?></option>
+					<option value="<?php echo $catr['id']; ?>" <?php if( $catr['id'] == $r['catid']){ echo "selected"; } ?>><?php echo $catr['name']; ?></option>
 				<?php } ?>
 				</select>
 			  </div>
@@ -113,12 +106,19 @@
 
 			  <div class="form-group">
 			    <label for="productprice">Product Price</label>
-			    <input type="text" class="form-control" name="productprice" id="productprice" placeholder="Product Price">
+			    <input type="text" class="form-control" name="productprice" id="productprice" placeholder="Product Price" value="<?php echo $r['price']; ?>">
 			  </div>
 			  <div class="form-group">
 			    <label for="productimage">Product Image</label>
+			    <?php if(isset($r['thumb']) & !empty($r['thumb'])){ ?>
+			    <br>
+			    	<img src="<?php echo $r['thumb'] ?>" widht="100px" height="100px">
+			    	<br>
+			    	<a href="delprodimg.php?id=<?php echo $r['id']; ?>">Delete Image</a>
+			    <?php }else{ ?>
 			    <input type="file" name="productimage" id="productimage">
-			    <p class="help-block"> jpg / png image's only.</p>
+			    <p class="help-block">jpg / png image's only.</p>
+			    <?php } ?>
 			  </div>
 			  
 			  <button type="submit" class="btn btn-default">Submit</button>
@@ -128,9 +128,8 @@
 	</div>
 
 </section>
-				
 
-	 
+
 	<!-- FOOTER -->
 <!-- include 'inc/footer.php'; ?>  -->
 <?php include '../../user/footer.php'; ?> 

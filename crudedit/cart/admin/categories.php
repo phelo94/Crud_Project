@@ -8,32 +8,46 @@
 ?>
 
 <?php include 'inc/header.php'; ?> 
-
-
-
-<html>
-<!--<div class="close-btn fa fa-times"></div>
 	
 	<!-- Navigation  -->
 <?php include 'inc/nav.php'; ?> 
+
+
+<br>
+	<br>
+	<br>
 	
-	<!-- SHOP CONTENT -->
-	<section id="content">
-		<div class="content-blog">
-			<div class="container align-center">
-				<div class="row">
-					<div class="page_header text-center">
-					<br>
-						<h2>Home Page</h2>
-						<p>Welcome</p>
-					</div>
-					<br>
-					<br>
-					<br>
+<section id="content">
+	<div class="content-blog">
+		<div class="container">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Category Name</th>
+						<th>Operations</th>
+					</tr>
+				</thead>
+				<tbody>
+				<?php 	
+					$sql = "SELECT * FROM category";
+					$res = mysqli_query($connection, $sql); 
+					while ($r = mysqli_fetch_assoc($res)) {
+				?>
+					<tr>
+						<th scope="row"><?php echo $r['id']; ?></th>
+						<td><?php echo $r['name']; ?></td>
+						<td><a href="editcategory.php?id=<?php echo $r['id']; ?>">Edit</a> | <a href="delcategory.php?id=<?php echo $r['id']; ?>">Delete</a></td>
+					</tr>
+					
+					<?php } ?>
+				</tbody>
+			</table>
+			
+		</div>
+	</div>
 
-    
-
-                    
+</section>        
 					
 	
 	 
