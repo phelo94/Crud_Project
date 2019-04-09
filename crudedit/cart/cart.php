@@ -1,6 +1,13 @@
-<?php include 'inc/header.php'; ?> 
-<?php include 'inc/nav.php'; ?> 
+<?php 
+session_start();
+require_once 'config/connect.php';
+include 'inc/header.php'; 
+include 'inc/nav.php'; 
+$cart = $_SESSION['cart'];
+?> 
 	
+	<br>
+	<br>
 	<!-- SHOP CONTENT -->
 	<section id="content">
 		<div class="content-blog">
@@ -8,7 +15,7 @@
 				<div class="row">
 					<div class="page_header text-center">
 						<h2>Shop Cart</h2>
-						<p>ff</p>
+						<p></p>
 					</div>
 					<div class="col-md-12">
 
@@ -24,6 +31,17 @@
 					</tr>
 				</thead>
 				<tbody>
+				
+				<?php
+				$total = 0;
+					foreach ($cart as $key => $value) {
+						//echo $key . " : " . $value['quantity'] ."<br>";
+						$cartsql = "SELECT * FROM products WHERE id=$key";
+						$cartres = mysqli_query($connection, $cartsql);
+						$cartr = mysqli_fetch_assoc($cartres);
+
+					
+				 ?>
 					<tr>
 						<td>
 							<a class="remove"><i class="fa fa-times"></i></a>
@@ -44,33 +62,29 @@
 							<span class="amount">€69.99</span>					
 						</td>
 					</tr>
-					<tr>
+                        <tr>
 						<td>
-							<a class="remove"><i class="fa fa-times"></i></a>
+							<a class="remove" href="delcart.php?id=<?php echo $key; ?>"><i class="fa fa-times"></i></a>
 						</td>
 						<td>
-							<a href="#"><img src="images/shop/2.jpg" alt="" height="90" width="90"></a>					
+							<a href="#"><img src="admin/<?php echo $cartr['thumb']; ?>" alt="" height="90" width="90"></a>					
 						</td>
 						<td>
-							<a href="#">Away Jersey</a>					
+							<a href="single.php?id=<?php echo $cartr['id']; ?>"><?php echo substr($cartr['name'], 0 , 30); ?></a>					
 						</td>
 						<td>
-							<span class="amount">€79.99</span>					
+							<span class="amount">INR<?php echo $cartr['price']; ?>.00/-</span>					
 						</td>
 						<td>
-							<div class="quantity">1</div>
+							<div class="quantity"><?php echo $value['quantity']; ?></div>
 						</td>
 						<td>
-							<span class="amount">€79.99</span>					
+							<span class="amount">INR<?php echo ($cartr['price']*$value['quantity']); ?>.00/-</span>					
 						</td>
 					</tr>
 					<tr>
 						<td colspan="6" class="actions">
 							<div class="col-md-6">
-								<div class="coupon">
-									<label>Coupon:</label><br>
-									<input placeholder="Coupon code" type="text"> <button type="submit">Apply</button>
-								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="cart-btn">
@@ -83,15 +97,14 @@
 				</tbody>
 			</table>		
 
-			<div class="cart_totals">
+						<div class="cart_totals">
 				<div class="col-md-6 push-md-6 no-padding">
 					<h4 class="heading">Cart Totals</h4>
-					<br>
 					<table class="table table-bordered col-md-6">
 						<tbody>
 							<tr>
 								<th>Cart Subtotal</th>
-								<td><span class="amount">€160.00</span></td>
+								<td><span class="amount">INR <?php echo $total; ?>.00/-</span></td>
 							</tr>
 							<tr>
 								<th>Shipping and Handling</th>
@@ -101,7 +114,7 @@
 							</tr>
 							<tr>
 								<th>Order Total</th>
-								<td><strong><span class="amount">€190.00</span></strong> </td>
+								<td><strong><span class="amount">INR <?php echo $total; ?>.00/-</span></strong> </td>
 							</tr>
 						</tbody>
 					</table>
@@ -113,6 +126,4 @@
 			</div>
 		</div>
 	</section>
-
-	<!-- FOOTER -->
-<?php include 'inc/footer.php'; ?> 
+<?php include 'inc/footer.php' ?>

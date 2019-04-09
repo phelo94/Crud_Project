@@ -1,6 +1,3 @@
-	
-	<header>
-	<div>
 											<div class="menu-wrap">
 				<div id="mobnav-btn">Menu <i class="fa fa-bars"></i></div>
 				<ul class="sf-menu">
@@ -16,9 +13,16 @@
 						<a href="shop.php">Shop</a>
 						<div class="mobnav-subarrow"><i class="fa fa-plus"></i></div>
 						<ul>
-							<li><a href="shop.php">Jerseys</a></li>
-							<li><a href="shop.php">Tickets</a></li>
-
+						<!--  $r()
+						only display the relating category made in admin,,, use 'id'  ,,,, $catr is category item 
+				         -->
+						<?php
+							$catsql = "SELECT * FROM category";
+							$catres = mysqli_query($connection, $catsql);
+							while($catr = mysqli_fetch_assoc($catres)){
+						 ?>
+                             <li><a href="index.php?id=<?php echo $catr['id']; ?>"><?php echo $catr['name']; ?></a></li>
+						<?php } ?>
 						</ul>
 					</li>
 					<li>
@@ -84,5 +88,3 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</header>
